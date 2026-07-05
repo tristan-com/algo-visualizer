@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Algorithm Visualizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Pathfinding Visualizer</h1>
+    <p class="subtitle">Generate a maze or draw your own, then watch an algorithm solve it.</p>
+  </header>
+
+  <div class="controls">
+
+    <!-- Maze generation -->
+    <label>Maze</label>
+    <select id="maze-algo">
+      <option value="dfs">DFS (winding)</option>
+      <option value="division">Division (rooms)</option>
+    </select>
+    <button id="maze-btn">Generate</button>
+
+    <div class="divider"></div>
+
+    <!-- Manual drawing -->
+    <label>Draw</label>
+    <div class="btn-group">
+      <button id="wall-btn" class="active">Wall</button>
+      <button id="mud-btn">Mud (×5)</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Pathfinding -->
+    <label for="algorithm">Algorithm</label>
+    <select id="algorithm">
+      <option value="bfs">BFS</option>
+      <option value="dfs">DFS</option>
+      <option value="dijkstra">Dijkstra</option>
+      <option value="astar">A*</option>
+    </select>
+
+    <label for="speed">Speed</label>
+    <select id="speed">
+      <option value="40">Fast</option>
+      <option value="15" selected>Faster</option>
+      <option value="80">Slow</option>
+    </select>
+
+    <button id="visualize-btn">Visualize</button>
+    <button id="stop-btn" style="display:none">Stop</button>
+    <button id="clear-walls-btn">Clear All</button>
+    <button id="reset-btn">Reset</button>
+
+    <span id="status" class="status"></span>
+  </div>
+
+  <div id="grid-container"></div>
+
+  <div class="legend">
+    <span><span class="swatch start"></span> Start</span>
+    <span><span class="swatch end"></span> End</span>
+    <span><span class="swatch wall"></span> Wall</span>
+    <span><span class="swatch mud"></span> Mud (cost 5)</span>
+    <span><span class="swatch visited"></span> Visited</span>
+    <span><span class="swatch path"></span> Path</span>
+  </div>
+
+  <p class="hint">
+    Drag start/end to move them &nbsp;·&nbsp;
+    Click terrain to toggle &nbsp;·&nbsp;
+    BFS ignores mud — use Dijkstra or A* to see weight matter
+  </p>
+
+  <script src="script.js"></script>
+</body>
+</html>
