@@ -1,3 +1,4 @@
+![Pathfinding Visualizer](assets/preview.png)
 # Pathfinding Visualizer
 
 A full stack pathfinding algorithm visualizer built with **FastAPI** (backend) and **plain HTML/CSS/JavaScript** (frontend). Watch BFS, DFS, Dijkstra, and A* search a grid in real time — or generate a maze first and let the algorithm find its way through.
